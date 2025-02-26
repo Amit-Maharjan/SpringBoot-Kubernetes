@@ -92,17 +92,60 @@ NAME             TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
 springboot-k8s   NodePort    10.98.48.113    <none>        9090:32252/TCP   4s
 ```
 
+### OR
+
+## Step 8: Deploy Using YAML Configuration 
+Instead of manually running commands, you can define your deployment and service in YAML files and apply them.
+
+### Apply the YAML Configurations
+```sh
+kubectl apply -f k8s-deployment.yaml
+kubectl apply -f k8s-service.yaml
+```
+#### Sample Output:
+```sh
+service/springboot-k8s-service created
+```
+
+#### Verify the Deployment and Service
+```sh
+kubectl get svc
+```
+#### Sample Output:
+```
+NAME                     TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
+details                  ClusterIP   10.109.5.103     <none>        9080/TCP         27h
+kubernetes               ClusterIP   10.96.0.1        <none>        443/TCP          33d
+productpage              ClusterIP   10.97.187.183    <none>        9080/TCP         27h
+ratings                  ClusterIP   10.101.184.156   <none>        9080/TCP         27h
+reviews                  ClusterIP   10.100.114.113   <none>        9080/TCP         27h
+springboot-k8s           NodePort    10.98.48.113     <none>        9090:32252/TCP   135m
+springboot-k8s-service   NodePort    10.109.115.147   <none>        9090:32615/TCP   26s
+```
+
 ## Step 9: Access the Application
 ```sh
 minikube service springboot-k8s --url
+```
+
+### OR
+
+```sh
+minikube service springboot-k8s-service --url
 ```
 #### Sample Output:
 ```
 http://127.0.0.1:56794
 ```
+
+### OR
+
+```
+http://127.0.0.1:59747
+```
 Open this URL in a browser to access the application.
 
-## Step 10: Open Kubernetes Dashboard
+## Step 12: Open Kubernetes Dashboard
 ```sh
 minikube dashboard
 ```
