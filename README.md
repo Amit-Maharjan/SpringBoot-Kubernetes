@@ -1,6 +1,6 @@
 # Kubernetes Deployment Guide
 
-This guide outlines the steps to deploy a Spring Boot application on Kubernetes using Minikube.
+This guide outlines the steps to deploy a Spring Boot application on Kubernetes using kubectl command.
 
 ## Prerequisites
 - Docker installed and running
