@@ -17,4 +17,4 @@ spec:
           image: springboot-k8s:1.0
           imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 8080
+            - containerPort: 9090
